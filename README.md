@@ -120,7 +120,7 @@ public class TsubuyakiService {
 ||tsubuyakiForm|検索フォーム|
 ||投稿する()|POST /read tsubuyakiForm|
 ||検索する()|GET /search keyword|
-|tsubuytaki_list||検索結果画面|
+|search_result.html||検索結果画面|
 ||tsubuyakiList|検索されたつぶやきのリスト|
 ||戻る()|GET /read|
 
