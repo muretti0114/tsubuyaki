@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>みんなのつぶやき</title>
+</head>
+
+<body>
+    <h1>みんなのつぶやき</h1>
+    <ul>
+        <li th:each="t: ${tsubuyakiList}">
+            [[${t.comment}]] -- [[${t.name}]] on [[${t.createdAt}]]
+        </li>
+    </ul>
+    <h2>投稿する</h2>
+    <form th:action="@{/read}" th:object="${tsubuyakiForm}" method="post">
+        <label for="name">お名前：</label>
+        <input type="text" th:field="*{name}" size="8" value="名無しさん" />
+        <label for="comment">つぶやき：</label>
+        <input type="text" required th:field="*{comment}" />
+        <input type="submit" value="つぶやく" />
+    </form>
+
+    <h2>検索する</h2>
+    <form th:action="@{/search}" method="get">
+        <label for="keyword">キーワード：</label>
+        <input type="text" required name="keyword" id="keyword" />
+        <input type="submit" value="検索する" />
+    </form>
+
+    <h2>タイトルへ</h2>
+    <a th:href="@{/}">戻る</a>
+</body>
+
+</html>
