@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>検索結果</title>
+</head>
+
+<body>
+    <h1>検索結果</h1>
+    <h2 th:text="${#lists.size(tsubuyakiList) + '件の結果が見つかりました'}"></h2>
+    <ul>
+        <li th:each="t: ${tsubuyakiList}">
+            [[${t.comment}]] -- [[${t.name}]] on [[${t.createdAt}]]
+        </li>
+    </ul>
+    <a th:href=@{/read}>戻る</a>
+</body>
+
+</html>
